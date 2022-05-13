@@ -48,6 +48,7 @@ const IndexPage: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>
 export const getServerSideProps = async ({ req, res }: GetServerSidePropsContext) => {
   const flashSession = await getFlashSession(req, res)
   const flash = useFlash(flashSession)
+  console.log({ flash })
   return { props: { flash } }
 }
 
